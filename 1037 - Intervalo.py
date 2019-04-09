@@ -14,27 +14,29 @@ Saída
 A saída deve ser uma mensagem conforme exemplo abaixo.
 
     >>> calcular_intervalo(25.01)
-    Intervalo (25,50]
+    'Intervalo (25,50]'
 
     >>> calcular_intervalo(25.00)
-    Intervalo [0,25]
+    'Intervalo [0,25]'
 
     >>> calcular_intervalo(100.00)
-    Intervalo (75,100]
+    'Intervalo (75,100]'
 
     >>> calcular_intervalo(-25.02)
-    Fora de intervalo
+    'Fora de intervalo'
 """
+
+intervalos = ([25, 'Intervalo [0,25]'], [50, 'Intervalo (25,50]'], [75, 'Intervalo (50,75]'], [100, 'Intervalo (75,100]'])
 
 
 def calcular_intervalo(inter):
-    if 0 <= inter < 25.01:
-        print('Intervalo [0,25]')
-    elif 25.00 <= inter <= 50:
-        print('Intervalo (25,50]')
-    elif 50.00 < inter <= 75:
-        print('Intervalo (50,75]')
-    elif 75.00 < inter <= 100:
-        print('Intervalo (75,100]')
-    else:
-        print('Fora de intervalo')
+    if inter < 0:
+        return 'Fora de intervalo'
+    for limite_superior, saida in intervalos:
+        if inter <= limite_superior:
+            return saida
+    return 'Fora de intervalo'
+
+
+n = float(input())
+print(calcular_intervalo(n))
