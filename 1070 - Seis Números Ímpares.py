@@ -20,7 +20,6 @@ A saída será uma sequência de seis números ímpares.
 """
 
 impares = int(input())
-
 for i in range(impares, impares+12):  # se quero 6 números, então fui até o dobro (12)
     if i % 2 != 0:
         print(i)
