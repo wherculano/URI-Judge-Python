@@ -23,10 +23,12 @@ Apresente o maior valor lido e a posição de entrada, conforme exemplo abaixo.
 
 maior = 0
 lista = dict()
+
 for i in range(100):
     valor = int(input())
     if valor > maior:
         maior = valor
-        lista[valor] = i
+        lista[valor] = i  # adicionará o valor como key  do dict e guardará a posição como value
+
 print(maior)
-print(lista[maior]+1)
+print(lista[maior]+1)  # imprime o valor da posição (se indice 0 = posição 1, por isso a soma de 1 ao fim)
