@@ -26,6 +26,10 @@ def divisores(n):
     3
     6
     """
-    for i in range(1, n+1):
-        if 6 % i == 0:
+    for i in range(1, n + 1):
+        if n % i == 0:
             print(i)
+
+
+N = int(input())
+divisores(N)
